@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Afroasiatic Language Family</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --bg: #f9f9fb;
+      --text: #333;
+      --card: #ffffff;
+      --accent: #4a90e2;
+      --hover: #e0e0e0;
+      --highlight: #fbeee6;
+      --geez: #c0392b;
+    }
+
+    body.dark {
+      --bg: #1e1e1e;
+      --text: #f0f0f0;
+      --card: #2b2b2b;
+      --accent: #74b9ff;
+      --hover: #444;
+      --highlight: #3b3b3b;
+      --geez: #ff7675;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 650px;
+      margin: auto;
+      background: var(--card);
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: var(--accent);
+      margin-bottom: 25px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      position: relative;
+      padding-left: 20px;
+      margin: 10px 0;
+      transition: all 0.2s ease-in-out;
+    }
+
+    li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    li:hover {
+      color: var(--accent);
+      transform: translateX(5px);
+    }
+
+    .nested {
+      padding-left: 20px;
+      border-left: 2px solid var(--hover);
+      margin-top: 8px;
+    }
+
+    .geez {
+      color: var(--geez);
+      font-weight: bold;
+      font-style: italic;
+      background-color: var(--highlight);
+      padding: 4px 8px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    #search {
+      width: 100%;
+      padding: 10px;
+      margin: 20px 0 30px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .controls button {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .controls button:hover {
+      background-color: #2f7dc3;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="controls">
+      <h2>Afroasiatic Language Family</h2>
+      <button onclick="toggleDark()">🌙 Toggle Dark Mode</button>
+    </div>
+    
+    <h1>The history of Ge'ez</h1>
+  <p>Ge’ez, the ancient language of Ethiopia, is a deep and wonderful language. Learning it should start with learning its history. So where did this language come from, and how has it evolved?</p>
+
+  <p>Africa is home to many languages. These languages are grouped into families. Some of the most prevalent language families include Niger-Congo, Afroasiatic, Nilo-Saharan, and Khoisan.
+  Niger-Congo is the largest of all. Swahili, Fula, Igbo, and many other languages belong to this group.</p>
+
+  <p>The second one is Nilo-Saharan. It's common in the eastern and north eastern part of the continent.</p>
+
+  <p>The third one is Khoisan. It is the oldest of the four, yet has the fewest languages.</p>
+
+  <p>The fourth, and the one we want to look at more deeply, is Afroasiatic. The most abundant language family in northern and the horn of Africa including Ethiopia is Afroasiatic. Most Ethiopian languages belong to this family.</p>
+
+    
+
+    <ul id="language-list">
+      <li>Berber</li>
+      <li>Chadic</li>
+      <li>Cushitic</li>
+      <li>Omotic</li>
+      <li>Egyptian</li>
+      <li>Semitic
+        <ul class="nested">
+          <li>Northern Semitic</li>
+          <li>Southern Semitic
+            <ul class="nested">
+              <li>Ethio-Semitic
+                <ul class="nested">
+                  <li>Southern Ethio-Semitic
+                    <ul class="nested">
+                      <li><span class="geez">Ge'ez</span></li>
+                    </ul>
+                  </li>
+                  <li>Northern Ethio-Semitic</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Your original text starts here -->
+  
+
+  <h1> The meaning of Ge’ez</h1>
+  <p>The word Ge'ez is read as Gəʽəz, IPA: [ˈɡɨʕɨz]. In the Ge'ez and Amharic alphabet, there are many letters which sound the same. The “ሀ”, “ሐ” and “ኀ” all are read as “hä”. The “ሠ” and “ሰ” sounds “sä”. The “ጸ” and “ፀ” represents the “ḍa”/tse/ sound. Just like this, we also have two letters to write the word Ge'ez. The first one is “ግእዝ” and the second is “ግዕዝ”. While both words possess the same pronunciation, Ge'ez, their meaning is quite different. The first word “ግእዝ” is derived from the verb “ግአዘ” and it means first and is the name of the language. The second one “ግዕዝ” is derived from the word “ገዐዘ”. It represents emotion, anger, sadness or journey.</p>
+
+  <p>According to most traditional scholars, the name of the language should be written by the letter “እ”. Although some still debate that it should be written with the other letter, the most widely accepted name of the language is “ግእዝ”.</p>
+
+  <h1>The origin of Ge'ez</h1>
+  <p>Ge’ez is today used as the liturgical language in the Ethiopian and Eritrean churches. Many of the ancient manuscripts of Ethiopia are written by this language. It has been in use for centuries. Tracing back to the ancient languages, even the inscriptions of the Axumite Empire were written in Sabaean, Greek, and Ge'ez.
+  But the origin of Ge'ez is still uncertain.</p>
+
+  <p>One common and widely accepted argument relates to the tribes that migrated to Ethiopia. Different tribes have migrated to Ethiopia. One of the commonly mentioned tribes were the Habeshat tribes. Their language was Sabaean. The Agazian tribe (which indeed sounds like Ge'ez), arrived after the Habeshat tribes from south Arabia. They were descendants of Shem, from a particular group called “Yoktan/ዮቅጣን/,” and their language was Ge’ez. They were mentioned in the Adulis inscriptions at the time of an unknown emperor of Ethiopia. It is said that they fought the Habeshat tribes and their language became more dominant than the Sabaean. The writing system of Ge'ez borrowed elements from the Sabaean and Greek alphabets.</p>
+
+  <script>
+    function toggleDark() {
+      document.body.classList.toggle("dark");
+    }
+
+    function filterList() {
+      const input = document.getElementById('search').value.toLowerCase();
+      const items = document.querySelectorAll('#language-list li');
+
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(input) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
