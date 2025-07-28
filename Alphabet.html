@@ -80,95 +80,103 @@
 </head>
 <body>
 
-  <h1>Ge‘ez / ግዕዝ Syllabary Chart</h1>
+<h1>Ge‘ez / ግዕዝ Syllabary Chart</h1>
 
-  <div class="toggle-btn">
-    <button onclick="toggleDarkMode()">🌓 Toggle Dark Mode</button>
-    <button onclick="startQuiz()">🧠 Quiz Me!</button>
-  </div>
+<div class="toggle-btn">
+  <button onclick="toggleDarkMode()">🌓 Toggle Dark Mode</button>
+  <button onclick="startQuiz()">🧠 Quiz Me!</button>
+</div>
 
-  <table id="geezTable">
-    <thead>
-      <tr>
-        <th></th>
-        <th title="ä as in 'father'">ä</th>
-        <th title="u as in 'boot'">u</th>
-        <th title="i as in 'machine'">i</th>
-        <th title="a as in 'cat'">a</th>
-        <th title="ē as in 'they'">ē</th>
-        <th title="ə as in 'sofa'">ə</th>
-        <th title="o as in 'go'">o</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><th>h</th><td>ሀ</td><td>ሁ</td><td>ሂ</td><td>ሃ</td><td>ሄ</td><td>ህ</td><td>ሆ</td></tr>
-      <tr><th>l</th><td>ለ</td><td>ሉ</td><td>ሊ</td><td>ላ</td><td>ሌ</td><td>ል</td><td>ሎ</td></tr>
-      <tr><th>ḥ</th><td>ሐ</td><td>ሑ</td><td>ሒ</td><td>ሓ</td><td>ሔ</td><td>ሕ</td><td>ሖ</td></tr>
-      <tr><th>m</th><td>መ</td><td>ሙ</td><td>ሚ</td><td>ማ</td><td>ሜ</td><td>ም</td><td>ሞ</td></tr>
-      <tr><th>s</th><td>ሰ</td><td>ሱ</td><td>ሲ</td><td>ሳ</td><td>ሴ</td><td>ስ</td><td>ሶ</td></tr>
-      <tr><th>š</th><td>ሸ</td><td>ሹ</td><td>ሺ</td><td>ሻ</td><td>ሼ</td><td>ሽ</td><td>ሾ</td></tr>
-      <tr><th>r</th><td>ረ</td><td>ሩ</td><td>ሪ</td><td>ራ</td><td>ሬ</td><td>ር</td><td>ሮ</td></tr>
-      <tr><th>q</th><td>ቀ</td><td>ቁ</td><td>ቂ</td><td>ቃ</td><td>ቄ</td><td>ቅ</td><td>ቆ</td></tr>
-      <tr><th>b</th><td>በ</td><td>ቡ</td><td>ቢ</td><td>ባ</td><td>ቤ</td><td>ብ</td><td>ቦ</td></tr>
-      <tr><th>t</th><td>ተ</td><td>ቱ</td><td>ቲ</td><td>ታ</td><td>ቴ</td><td>ት</td><td>ቶ</td></tr>
-      <tr><th>č</th><td>ቸ</td><td>ቹ</td><td>ቺ</td><td>ቻ</td><td>ቼ</td><td>ች</td><td>ቾ</td></tr>
-      <tr><th>n</th><td>ነ</td><td>ኑ</td><td>ኒ</td><td>ና</td><td>ኔ</td><td>ን</td><td>ኖ</td></tr>
-      <tr><th>k</th><td>ከ</td><td>ኩ</td><td>ኪ</td><td>ካ</td><td>ኬ</td><td>ክ</td><td>ኮ</td></tr>
-      <tr><th>w</th><td>ወ</td><td>ዉ</td><td>ዊ</td><td>ዋ</td><td>ዌ</td><td>ው</td><td>ዎ</td></tr>
-      <tr><th>ʾ</th><td>ዐ</td><td>ዑ</td><td>ዒ</td><td>ዓ</td><td>ዔ</td><td>ዕ</td><td>ዖ</td></tr>
-      <tr><th>y</th><td>የ</td><td>ዩ</td><td>ዪ</td><td>ያ</td><td>ዬ</td><td>ይ</td><td>ዮ</td></tr>
-    </tbody>
-  </table>
+<table id="geezTable">
+  <thead>
+    <tr>
+      <th></th>
+      <th title="ä as in 'father'">ä</th>
+      <th title="u as in 'boot'">u</th>
+      <th title="ē as in 'they'">ē</th> <!-- Swapped -->
+      <th title="a as in 'cat'">a</th>
+      <th title="i as in 'machine'">i</th> <!-- Swapped -->
+      <th title="ə as in 'sofa'">ə</th>
+      <th title="o as in 'go'">o</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><th>h</th><td>ሀ</td><td>ሁ</td><td>ሄ</td><td>ሃ</td><td>ሂ</td><td>ህ</td><td>ሆ</td></tr>
+    <tr><th>l</th><td>ለ</td><td>ሉ</td><td>ሌ</td><td>ላ</td><td>ሊ</td><td>ል</td><td>ሎ</td></tr>
+    <tr><th>ḥ</th><td>ሐ</td><td>ሑ</td><td>ሔ</td><td>ሓ</td><td>ሒ</td><td>ሕ</td><td>ሖ</td></tr>
+    <tr><th>m</th><td>መ</td><td>ሙ</td><td>ሜ</td><td>ማ</td><td>ሚ</td><td>ም</td><td>ሞ</td></tr>
+    <tr><th>s</th><td>ሰ</td><td>ሱ</td><td>ሴ</td><td>ሳ</td><td>ሲ</td><td>ስ</td><td>ሶ</td></tr>
+    <tr><th>r</th><td>ረ</td><td>ሩ</td><td>ሬ</td><td>ራ</td><td>ሪ</td><td>ር</td><td>ሮ</td></tr>
+    <tr><th>q</th><td>ቀ</td><td>ቁ</td><td>ቄ</td><td>ቃ</td><td>ቂ</td><td>ቅ</td><td>ቆ</td></tr>
+    <tr><th>b</th><td>በ</td><td>ቡ</td><td>ቤ</td><td>ባ</td><td>ቢ</td><td>ብ</td><td>ቦ</td></tr>
+    <tr><th>t</th><td>ተ</td><td>ቱ</td><td>ቴ</td><td>ታ</td><td>ቲ</td><td>ት</td><td>ቶ</td></tr>
+    <tr><th>č</th><td>ቸ</td><td>ቹ</td><td>ቼ</td><td>ቻ</td><td>ቺ</td><td>ች</td><td>ቾ</td></tr>
+    <tr><th>n</th><td>ነ</td><td>ኑ</td><td>ኔ</td><td>ና</td><td>ኒ</td><td>ን</td><td>ኖ</td></tr>
+    <tr><th>k</th><td>ከ</td><td>ኩ</td><td>ኬ</td><td>ካ</td><td>ኪ</td><td>ክ</td><td>ኮ</td></tr>
+    <tr><th>w</th><td>ወ</td><td>ዉ</td><td>ዌ</td><td>ዋ</td><td>ዊ</td><td>ው</td><td>ዎ</td></tr>
+    <tr><th>ʾ</th><td>ዐ</td><td>ዑ</td><td>ዔ</td><td>ዓ</td><td>ዒ</td><td>ዕ</td><td>ዖ</td></tr>
+    <tr><th>y</th><td>የ</td><td>ዩ</td><td>ዬ</td><td>ያ</td><td>ዪ</td><td>ይ</td><td>ዮ</td></tr>
+  </tbody>
+</table>
 
-  <div class="popup" id="popup"></div>
+<div class="popup" id="popup"></div>
 
-  <script>
-    const ipaHeaders = ["ä", "u", "i", "a", "ē", "ə", "o"];
-    const table = document.getElementById("geezTable");
-    const popup = document.getElementById("popup");
-    const body = document.body;
+<script>
+  const ipaHeaders = ["ä", "u", "ē", "a", "i", "ə", "o"]; // swapped ē and i
+  const table = document.getElementById("geezTable");
+  const popup = document.getElementById("popup");
+  const body = document.body;
 
-    table.addEventListener("click", function (event) {
-      const cell = event.target;
-      const row = cell.parentElement;
-      const cellIndex = cell.cellIndex;
+  table.addEventListener("click", function (event) {
+    const cell = event.target;
+    const row = cell.parentElement;
+    const cellIndex = cell.cellIndex;
 
-      if (cell.tagName === "TD" && cellIndex > 0) {
-        const ipa = ipaHeaders[cellIndex - 1];
-        const char = cell.innerText;
+    if (cell.tagName === "TD" && cellIndex > 0) {
+      const ipa = ipaHeaders[cellIndex - 1];
+      const char = cell.innerText;
 
-        popup.innerText = `IPA: [${ipa}] — '${char}'`;
-        popup.style.display = "block";
+      popup.innerText = `IPA: [${ipa}] — '${char}'`;
+      popup.style.display = "block";
 
-        const utter = new SpeechSynthesisUtterance(char);
-        utter.lang = "am-ET";
-        speechSynthesis.speak(utter);
+      const utter = new SpeechSynthesisUtterance(char);
+      utter.lang = "am-ET";
 
-        setTimeout(() => {
-          popup.style.display = "none";
-        }, 3000);
+      // Swap voice output for columns 3 and 5
+      if (cellIndex === 3) {
+        utter.text = row.cells[5].innerText;
+      } else if (cellIndex === 5) {
+        utter.text = row.cells[3].innerText;
       }
-    });
 
-    function toggleDarkMode() {
-      body.classList.toggle("dark");
+      speechSynthesis.speak(utter);
+
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 3000);
     }
+  });
 
-    function startQuiz() {
-      const allRows = Array.from(table.getElementsByTagName("tr")).slice(1);
-      const randomRow = allRows[Math.floor(Math.random() * allRows.length)];
-      const cells = Array.from(randomRow.getElementsByTagName("td"));
-      const randIndex = Math.floor(Math.random() * cells.length);
-      const char = cells[randIndex].innerText;
-      const answer = ipaHeaders[randIndex];
+  function toggleDarkMode() {
+    body.classList.toggle("dark");
+  }
 
-      const userGuess = prompt(`What is the IPA vowel for '${char}'? (ex: ä, u, i, a, ē, ə, o)`);
-      if (userGuess && userGuess.trim().toLowerCase() === answer) {
-        alert("✅ Correct!");
-      } else {
-        alert(`❌ Incorrect. The correct answer is [${answer}]`);
-      }
+  function startQuiz() {
+    const allRows = Array.from(table.getElementsByTagName("tr")).slice(1);
+    const randomRow = allRows[Math.floor(Math.random() * allRows.length)];
+    const cells = Array.from(randomRow.getElementsByTagName("td"));
+    const randIndex = Math.floor(Math.random() * cells.length);
+    const char = cells[randIndex].innerText;
+    const answer = ipaHeaders[randIndex];
+
+    const userGuess = prompt(`What is the IPA vowel for '${char}'? (ex: ä, u, i, a, ē, ə, o)`);
+    if (userGuess && userGuess.trim().toLowerCase() === answer) {
+      alert("✅ Correct!");
+    } else {
+      alert(`❌ Incorrect. The correct answer is [${answer}]`);
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>
