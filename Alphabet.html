@@ -2,102 +2,519 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fidel Table</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sabaean vs Ge'ez Comparison</title>
   <style>
     body {
-      background: #f9f9f9;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      justify-content: center;
-      padding: 40px;
+      font-family: 'Georgia', serif;
+      background: #f3efe2 url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      padding: 20px;
+      margin: 0;
+      color: #3b2f1b;
+      line-height: 1.5;
     }
 
-    table {
-      border-collapse: separate;
-      border-spacing: 0;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-      background: white;
-      font-size: 20px;
-      min-width: 80%;
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 0.3em;
     }
 
-    th, td {
-      padding: 14px 20px;
+    p, ul, li {
+      max-width: 800px;
+      margin: 0 auto 1em auto;
+    }
+
+    nav {
+      max-width: 400px;
+      margin: 0 auto 30px auto;
+      padding: 10px;
+      background: #d9c9a9;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(94, 69, 38, 0.4);
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
       text-align: center;
     }
 
-    th {
-      background-color: #4e73df;
-      color: white;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+    nav ul li {
+      margin: 8px 0;
     }
 
-    tr:nth-child(even) {
-      background-color: #f4f6f9;
-    }
-
-    tr:hover {
-      background-color: #dce3fa;
-      transition: background-color 0.3s;
-    }
-
-    td:first-child {
+    nav ul li a {
+      color: #3b2f1b;
+      text-decoration: none;
       font-weight: bold;
-      color: #4e73df;
-      background-color: #f0f3fa;
     }
 
-    @media screen and (max-width: 768px) {
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      margin: 20px auto 40px auto;
+      max-width: 100%;
+      border: 2px solid #5e4526;
+      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      border-collapse: collapse;
+      font-size: 18px;
+      width: 100%;
+      min-width: 300px;
+      text-align: center;
+    }
+
+    th, td {
+      border: 1px solid #5e4526;
+      padding: 10px 12px;
+      word-wrap: break-word;
+    }
+
+    th {
+      background-color: #d9c9a9;
+      font-weight: bold;
+      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    }
+
+    @media (max-width: 600px) {
       table {
         font-size: 16px;
-        min-width: 100%;
       }
 
       th, td {
-        padding: 10px;
+        padding: 6px 8px;
       }
+    }
+
+    details {
+      max-width: 800px;
+      margin: 0 auto 10px auto;
+      background: #e6dbc4;
+      padding: 10px 15px;
+      border-radius: 6px;
+      box-shadow: 0 0 6px rgba(94, 69, 38, 0.2);
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      outline: none;
+    }
+
+    summary:hover {
+      color: #5e4526;
     }
   </style>
 </head>
 <body>
 
-<table>
-  <tr>
-    <th></th><th>ä</th><th>u</th><th>i</th><th>a</th><th>e</th><th>ə</th><th>o</th>
-  </tr>
-  <tr><td>h</td><td>ሀ</td><td>ሁ</td><td>ሂ</td><td>ሃ</td><td>ሄ</td><td>ህ</td><td>ሆ</td></tr>
-  <tr><td>l</td><td>ለ</td><td>ሉ</td><td>ሊ</td><td>ላ</td><td>ሌ</td><td>ል</td><td>ሎ</td></tr>
-  <tr><td>ḥ</td><td>ሐ</td><td>ሑ</td><td>ሒ</td><td>ሓ</td><td>ሔ</td><td>ሕ</td><td>ሖ</td></tr>
-  <tr><td>m</td><td>መ</td><td>ሙ</td><td>ሚ</td><td>ማ</td><td>ሜ</td><td>ም</td><td>ሞ</td></tr>
-  <tr><td>ś</td><td>ሠ</td><td>ሡ</td><td>ሢ</td><td>ሣ</td><td>ሤ</td><td>ሥ</td><td>ሦ</td></tr>
-  <tr><td>r</td><td>ረ</td><td>ሩ</td><td>ሪ</td><td>ራ</td><td>ሬ</td><td>ር</td><td>ሮ</td></tr>
-  <tr><td>s</td><td>ሰ</td><td>ሱ</td><td>ሲ</td><td>ሳ</td><td>ሴ</td><td>ስ</td><td>ሶ</td></tr>
-  <tr><td>q</td><td>ቀ</td><td>ቁ</td><td>ቂ</td><td>ቃ</td><td>ቄ</td><td>ቅ</td><td>ቆ</td></tr>
-  <tr><td>b</td><td>በ</td><td>ቡ</td><td>ቢ</td><td>ባ</td><td>ቤ</td><td>ብ</td><td>ቦ</td></tr>
-  <tr><td>t</td><td>ተ</td><td>ቱ</td><td>ቲ</td><td>ታ</td><td>ቴ</td><td>ት</td><td>ቶ</td></tr>
-  <tr><td>ḥ</td><td>ኀ</td><td>ኁ</td><td>ኂ</td><td>ኃ</td><td>ኄ</td><td>ኅ</td><td>ኆ</td></tr>
-  <tr><td>n</td><td>ነ</td><td>ኑ</td><td>ኒ</td><td>ና</td><td>ኔ</td><td>ን</td><td>ኖ</td></tr>
-  <tr><td>ʔ</td><td>አ</td><td>ኡ</td><td>ኢ</td><td>ኣ</td><td>ኤ</td><td>እ</td><td>ኦ</td></tr>
-  <tr><td>k</td><td>ከ</td><td>ኩ</td><td>ኪ</td><td>ካ</td><td>ኬ</td><td>ክ</td><td>ኮ</td></tr>
-  <tr><td>w</td><td>ወ</td><td>ዉ</td><td>ዊ</td><td>ዋ</td><td>ዌ</td><td>ው</td><td>ዎ</td></tr>
-  <tr><td>ʔ</td><td>ዐ</td><td>ዑ</td><td>ዒ</td><td>ዓ</td><td>ዔ</td><td>ዕ</td><td>ዖ</td></tr>
-  <tr><td>z</td><td>ዘ</td><td>ዙ</td><td>ዚ</td><td>ዛ</td><td>ዜ</td><td>ዝ</td><td>ዞ</td></tr>
-  <tr><td>y</td><td>የ</td><td>ዩ</td><td>ዪ</td><td>ያ</td><td>ዬ</td><td>ይ</td><td>ዮ</td></tr>
-  <tr><td>d</td><td>ደ</td><td>ዱ</td><td>ዲ</td><td>ዳ</td><td>ዴ</td><td>ድ</td><td>ዶ</td></tr>
-  <tr><td>g</td><td>ገ</td><td>ጉ</td><td>ጊ</td><td>ጋ</td><td>ጌ</td><td>ግ</td><td>ጎ</td></tr>
-  <tr><td>ṭ</td><td>ጠ</td><td>ጡ</td><td>ጢ</td><td>ጣ</td><td>ጤ</td><td>ጥ</td><td>ጦ</td></tr>
-  <tr><td>p</td><td>ጰ</td><td>ጱ</td><td>ጲ</td><td>ጳ</td><td>ጴ</td><td>ጵ</td><td>ጶ</td></tr>
-  <tr><td>ṣ</td><td>ጸ</td><td>ጹ</td><td>ጺ</td><td>ጻ</td><td>ጼ</td><td>ጽ</td><td>ጾ</td></tr>
-  <tr><td>ṣ́</td><td>ፀ</td><td>ፁ</td><td>ፂ</td><td>ፃ</td><td>ፄ</td><td>ፅ</td><td>ፆ</td></tr>
-  <tr><td>f</td><td>ፈ</td><td>ፉ</td><td>ፊ</td><td>ፋ</td><td>ፌ</td><td>ፍ</td><td>ፎ</td></tr>
-  <tr><td>p</td><td>ፐ</td><td>ፑ</td><td>ፒ</td><td>ፓ</td><td>ፔ</td><td>ፕ</td><td>ፖ</td></tr>
-</table>
+  <nav>
+    <ul>
+      <li><a href="#comparison">Sabaean vs Ge'ez</a></li>
+      <li><a href="#fidel">Ge'ez Fidel Table</a></li>
+      <li><a href="#labiovelars">Labiovelars</a></li>
+      <li><a href="#amharic-derivations">Amharic Derivations</a></li>
+      <li><a href="#meanings">Meanings of the Letters</a></li>
+    </ul>
+  </nav>
 
+  <h1 id="comparison">The Ge'ez Alphabet</h1>
+  <p>
+    The Ge'ez alphabet took its writing system from the Sabaean system. Most of the letters are similar or nearly similar to the Sabaean alphabet. Two more letters are taken from the Greek alphabet. Look at the comparison between the Sabaean and the Ge'ez letters below.
+  </p>
+
+  <div class="table-scroll" aria-label="Sabaean and Ge'ez alphabet comparison">
+    <table>
+  <thead>
+    <tr>
+      <th>Sabaean</th><th>Ge'ez</th>
+      <th>Sabaean</th><th>Ge'ez</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>𐩠</td><td>ሀ</td>
+      <td>𐩡</td><td>ለ</td>
+    </tr>
+    <tr>
+      <td>𐩢</td><td>ሐ</td>
+      <td>𐩭</td><td>ኀ</td>
+    </tr>
+    <tr>
+      <td>𐩣</td><td>መ</td>
+      <td>𐩤</td><td>ቀ</td>
+    </tr>
+    <tr>
+      <td>𐩥</td><td>ወ</td>
+      <td>𐩧</td><td>ረ</td>
+    </tr>
+    <tr>
+      <td>𐩨</td><td>በ</td>
+      <td>𐩪</td><td>ሰ</td>
+    </tr>
+    <tr>
+      <td>𐩦</td><td>ሠ</td>
+      <td>𐩩</td><td>ተ</td>
+    </tr>
+    <tr>
+      <td>𐩫</td><td>ከ</td>
+      <td>𐩬</td><td>ነ</td>
+    </tr>
+    <tr>
+      <td>𐩰</td><td>ፈ</td>
+      <td>𐩱</td><td>አ</td>
+    </tr>
+    <tr>
+      <td>𐩲</td><td>ዐ</td>
+      <td>𐩼</td><td>ጸ</td>
+    </tr>
+    <tr>
+      <td>𐩳</td><td>ፀ</td>
+      <td>𐩷</td><td>ጠ</td>
+    </tr>
+    <tr>
+      <td>𐩴</td><td>ገ</td>
+      <td>𐩹</td><td>ዘ</td>
+    </tr>
+    <tr>
+      <td>𐩵</td><td>ደ</td>
+      <td>𐩺</td><td>የ</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+  <p style="max-width: 800px; margin: 0 auto 40px auto;">
+    The Ge'ez script includes over 200 characters. Among these, 26 base characters evolve into 7 forms depending on the vowel, making up 182 forms. The remaining 20 are labiovelars, some with only 4 forms. These forms express a wide variety of vowel sounds and syllabic combinations in the language.
+  </p>
+
+  
+  <div class="table-scroll" aria-label="Ge'ez Fidel vowel forms table">
+      
+      <style>
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 220px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid #444;
+    padding: 4px 6px;
+    text-align: center;
+  }
+  thead th {
+    background-color: #eee;
+  }
+  td:first-child {
+    font-weight: bold;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+    <!-- First pair -->
+    <table>
+      <thead>
+        <tr><th></th><th>ä</th><th>u</th><th>i</th><th>a</th><th>e</th><th>ə</th><th>o</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>h</td><td>ሀ</td><td>ሁ</td><td>ሂ</td><td>ሃ</td><td>ሄ</td><td>ህ</td><td>ሆ</td></tr>
+        <tr><td>l</td><td>ለ</td><td>ሉ</td><td>ሊ</td><td>ላ</td><td>ሌ</td><td>ል</td><td>ሎ</td></tr>
+        <tr><td>ḥ</td><td>ሐ</td><td>ሑ</td><td>ሒ</td><td>ሓ</td><td>ሔ</td><td>ሕ</td><td>ሖ</td></tr>
+        <tr><td>m</td><td>መ</td><td>ሙ</td><td>ሚ</td><td>ማ</td><td>ሜ</td><td>ም</td><td>ሞ</td></tr>
+        <tr><td>ś</td><td>ሠ</td><td>ሡ</td><td>ሢ</td><td>ሣ</td><td>ሤ</td><td>ሥ</td><td>ሦ</td></tr>
+        <tr><td>r</td><td>ረ</td><td>ሩ</td><td>ሪ</td><td>ራ</td><td>ሬ</td><td>ር</td><td>ሮ</td></tr>
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+        <tr><th></th><th>ä</th><th>u</th><th>i</th><th>a</th><th>e</th><th>ə</th><th>o</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>s</td><td>ሰ</td><td>ሱ</td><td>ሲ</td><td>ሳ</td><td>ሴ</td><td>ስ</td><td>ሶ</td></tr>
+        <tr><td>q</td><td>ቀ</td><td>ቁ</td><td>ቂ</td><td>ቃ</td><td>ቄ</td><td>ቅ</td><td>ቆ</td></tr>
+        <tr><td>b</td><td>በ</td><td>ቡ</td><td>ቢ</td><td>ባ</td><td>ቤ</td><td>ብ</td><td>ቦ</td></tr>
+        <tr><td>t</td><td>ተ</td><td>ቱ</td><td>ቲ</td><td>ታ</td><td>ቴ</td><td>ት</td><td>ቶ</td></tr>
+        <tr><td>ḥ</td><td>ኀ</td><td>ኁ</td><td>ኂ</td><td>ኃ</td><td>ኄ</td><td>ኅ</td><td>ኆ</td></tr>
+        <tr><td>n</td><td>ነ</td><td>ኑ</td><td>ኒ</td><td>ና</td><td>ኔ</td><td>ን</td><td>ኖ</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row">
+    <!-- Second pair -->
+    <table>
+      <thead>
+        <tr><th></th><th>ä</th><th>u</th><th>i</th><th>a</th><th>e</th><th>ə</th><th>o</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>ʔ</td><td>አ</td><td>ኡ</td><td>ኢ</td><td>ኣ</td><td>ኤ</td><td>እ</td><td>ኦ</td></tr>
+        <tr><td>k</td><td>ከ</td><td>ኩ</td><td>ኪ</td><td>ካ</td><td>ኬ</td><td>ክ</td><td>ኮ</td></tr>
+        <tr><td>w</td><td>ወ</td><td>ዉ</td><td>ዊ</td><td>ዋ</td><td>ዌ</td><td>ው</td><td>ዎ</td></tr>
+        <tr><td>ʔ</td><td>ዐ</td><td>ዑ</td><td>ዒ</td><td>ዓ</td><td>ዔ</td><td>ዕ</td><td>ዖ</td></tr>
+        <tr><td>z</td><td>ዘ</td><td>ዙ</td><td>ዚ</td><td>ዛ</td><td>ዜ</td><td>ዝ</td><td>ዞ</td></tr>
+        <tr><td>y</td><td>የ</td><td>ዩ</td><td>ዪ</td><td>ያ</td><td>ዬ</td><td>ይ</td><td>ዮ</td></tr>
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+        <tr><th></th><th>ä</th><th>u</th><th>i</th><th>a</th><th>e</th><th>ə</th><th>o</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>d</td><td>ደ</td><td>ዱ</td><td>ዲ</td><td>ዳ</td><td>ዴ</td><td>ድ</td><td>ዶ</td></tr>
+        <tr><td>g</td><td>ገ</td><td>ጉ</td><td>ጊ</td><td>ጋ</td><td>ጌ</td><td>ግ</td><td>ጎ</td></tr>
+        <tr><td>ṭ</td><td>ጠ</td><td>ጡ</td><td>ጢ</td><td>ጣ</td><td>ጤ</td><td>ጥ</td><td>ጦ</td></tr>
+        <tr><td>p</td><td>ጰ</td><td>ጱ</td><td>ጲ</td><td>ጳ</td><td>ጴ</td><td>ጵ</td><td>ጶ</td></tr>
+        <tr><td>ṣ</td><td>ጸ</td><td>ጹ</td><td>ጺ</td><td>ጻ</td><td>ጼ</td><td>ጽ</td><td>ጾ</td></tr>
+        <tr><td>ṣ́</td><td>ፀ</td><td>ፁ</td><td>ፂ</td><td>ፃ</td><td>ፄ</td><td>ፅ</td><td>ፆ</td></tr>
+        <tr><td>f</td><td>ፈ</td><td>ፉ</td><td>ፊ</td><td>ፋ</td><td>ፌ</td><td>ፍ</td><td>ፎ</td></tr>
+        <tr><td>p</td><td>ፐ</td><td>ፑ</td><td>ፒ</td><td>ፓ</td><td>ፔ</td><td>ፕ</td><td>ፖ</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+   
+</div>
+  
+
+  <h2 id="labiovelars">Labiovelars / ሕጹጻን ፊደላት</h2>
+  <p style="max-width: 800px; margin: 0 auto 40px auto;">
+    “ሕጹጽ” implies something incomplete. These 20 characters are considered special because some of them do not follow the standard seven-form pattern. Four have only four forms and serve unique phonetic roles in Ge'ez orthography.
+  </p>
+
+  <!-- Insert your labiovelars table here, wrapped with .table-scroll if you want -->
+
+  <h2 id="amharic-derivations">Amharic Alphabet Derivations</h2>
+  <p style="max-width: 800px; margin: 0 auto 40px auto;">
+    The Amharic alphabet adapted the Ge'ez alphabet, taking its shape from it:
+  </p>
+  <ul style="max-width: 400px; margin: 0 auto 40px auto; list-style: none; padding-left: 0;">
+    <li>ሸ took its form from ሰ</li>
+    <li>ቸ took its form from ተ</li>
+    <li>ኘ took its form from ነ</li>
+    <li>ኸ took its form from ከ</li>
+    <li>ዠ took its form from ዘ</li>
+    <li>ጀ took its form from ደ</li>
+    <li>ጨ took its form from ጠ</li>
+  </ul>
+
+  <h2 id="meanings">Meanings of the Letters</h2>
+  
+  </p>
+
+  <!-- Collapsible letter meanings -->
+  <section style="max-width: 850px; margin: 0 auto 50px auto;">
+    <details>
+      <h2 id="meanings">Meanings of the Letters</h2>
+<p style="max-width: 800px; margin: 0 auto 20px auto;">
+  The Ethiopian Orthodox Church assigns unique, prayer-inspired meanings to each letter.
+
+
+<section style="max-width: 850px; margin: 0 auto 50px auto;">
+  <details>
+    <summary>ሀ — The Father's life was before the world</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ሀልዎቱ ለአብ እም ቅድመ ዓለም፡፡<br>
+       <strong>Amharic:</strong> የአብ አኗኗሩ ከዓለም በፊት ነው፡፡<br>
+       <strong>English:</strong> The Father's life was before the world.</p>
+  </details>
+
+  <details>
+    <summary>ለ — Christ was incarnated from the Virgin Mary</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ለብሰ ሥጋ እምድንግል፡፡<br>
+       <strong>Amharic:</strong> ክርስቶስ ከድንግል ማርያም ሥጋን ለበሰ፡፡<br>
+       <strong>English:</strong> Christ was incarnated from the Virgin Mary.</p>
+  </details>
+
+  <details>
+    <summary>ሐ — Christ suffered, died, and was buried</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ሐመ ወሞተ ወተቀብረ፡፡<br>
+       <strong>Amharic:</strong> ክርስቶስ ታመመ፣ ሞተ፣ ተቀበረ፡፡<br>
+       <strong>English:</strong> Christ suffered, died, and was buried.</p>
+  </details>
+
+  <details>
+    <summary>መ — God's work is wonderful</summary>
+    <p><strong>Ge'ez:</strong> ብሂል መንክር ግብሩ ለእግዚአብሔር፡፡<br>
+       <strong>Amharic:</strong> የእግዚአብሔር ሥራው ድንቅ ነው፡፡<br>
+       <strong>English:</strong> God's work is wonderful.</p>
+  </details>
+
+  <details>
+    <summary>ሠ — The Lord was born (manifested) in human form</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ሠረቀ በሥጋ እምድንግል፡፡<br>
+       <strong>Amharic:</strong> ጌታ በሥጋ ተወለደ (ተገለጠ)፡፡<br>
+       <strong>English:</strong> The Lord was born (manifested) in human form.</p>
+  </details>
+
+  <details>
+    <summary>ረ — The earth is established by His word</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ረግዓ ሰማይ ወምድር፡፡<br>
+       <strong>Amharic:</strong> ምድር በቃሉ ረጋች (ጸናች)፡፡<br>
+       <strong>English:</strong> The earth is established by His word.</p>
+  </details>
+
+  <details>
+    <summary>ሰ — Our Lord became man</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ሰብአ ኮነ እግዚእነ፡፡<br>
+       <strong>Amharic:</strong> ጌታችን ሰው ሆነ፡፡<br>
+       <strong>English:</strong> Our Lord became man.</p>
+  </details>
+
+  <details>
+    <summary>ቀ — It was originally a word</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ቀዳሚሁ ቃል ውእቱ፡፡<br>
+       <strong>Amharic:</strong> በመጀመሪያ ቃል ነበር፡፡<br>
+       <strong>English:</strong> It was originally a word.</p>
+  </details>
+
+  <details>
+    <summary>በ — Our Lord came down to us in His humility</summary>
+    <p><strong>Ge'ez:</strong> ብሂል በትኅትናሁ ወረደ እግዚእነ፡፡<br>
+       <strong>Amharic:</strong> ጌታችን በትሕትናው ወደኛ ወረደ፡፡<br>
+       <strong>English:</strong> Our Lord came down to us in His humility.</p>
+  </details>
+
+  <details>
+    <summary>ተ — Our Lord became man</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ተሰብአ ወተሰገወ፡፡<br>
+       <strong>Amharic:</strong> ጌታችን ሰው ሆነ፡፡<br>
+       <strong>English:</strong> Our Lord became man.</p>
+  </details>
+
+  <details>
+    <summary>ኀ — God is powerful</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ኀያል እግዚአብሔር፡፡<br>
+       <strong>Amharic:</strong> እግዚአብሔር ኀያል ነው፡፡<br>
+       <strong>English:</strong> God is powerful.</p>
+  </details>
+
+  <details>
+    <summary>ነ — Our Lord has borne our infirmities and carried our sicknesses</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ነሥአ ደዌነ ወፆረ ሕማመነ፡፡<br>
+       <strong>Amharic:</strong> ጌታችን ደዌያችንን ያዘልን ሕመማችንን ተሸከመልን፡፡<br>
+       <strong>English:</strong> Our Lord has borne our infirmities and carried our sicknesses.</p>
+  </details>
+
+  <details>
+    <summary>አ — I thank God</summary>
+    <p><strong>Ge'ez:</strong> ብሂል አአኲቶ ወእሴብሖ ለእግዚአብሔር፡፡<br>
+       <strong>Amharic:</strong> እግዚአብሔርን አመሰግነዋለሁ፡፡<br>
+       <strong>English:</strong> I thank God.</p>
+  </details>
+
+  <details>
+    <summary>ከ — God is omnipotent</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ከሃሊ እግዚአብሔር፡፡<br>
+       <strong>Amharic:</strong> እግዚአብሔር ሁሉን ቻይ ነው፡፡<br>
+       <strong>English:</strong> God is omnipotent.</p>
+  </details>
+
+  <details>
+    <summary>ወ — He came down from the heavens</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ወረደ እምሰማያት፡፡<br>
+       <strong>Amharic:</strong> ከሰማያት ወረደ፡፡<br>
+       <strong>English:</strong> He came down from the heavens.</p>
+  </details>
+
+  <details>
+    <summary>ዐ — God is great</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ዐቢይ እግዚአብሔር፡፡<br>
+       <strong>Amharic:</strong> እግዚአብሔር ታላቅ ነው፡፡<br>
+       <strong>English:</strong> God is great.</p>
+  </details>
+
+  <details>
+    <summary>ዘ — God is the Ruler of all things</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ዘኲሎ ይእኅዝ እግዚአብሔር፡፡<br>
+       <strong>Amharic:</strong> እግዚአብሔር ሁሉን የሚገዛ ነው፡፡<br>
+       <strong>English:</strong> God is the Ruler of all things.</p>
+  </details>
+
+  <details>
+    <summary>የ — The right hand of God has made power</summary>
+    <p><strong>Ge'ez:</strong> ብሂል የማነ እግዚአብሔር ገብረት ኀይለ፡፡<br>
+       <strong>Amharic:</strong> የእግዚአብሔር ቀኝ ኀይልን አደረገች፡፡<br>
+       <strong>English:</strong> The right hand of God has made power.</p>
+  </details>
+
+  <details>
+    <summary>ደ — He united His divinity with our flesh</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ደመረ መለኮቶ ምስለ ሥጋነ፡፡<br>
+       <strong>Amharic:</strong> መለኮቱን ከሥጋችን ጋር አንድ አደረገ፡፡<br>
+       <strong>English:</strong> He united His divinity with our flesh.</p>
+  </details>
+
+  <details>
+    <summary>ገ — He is the One who created the earth and the heavens</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ገባሬ ሰማያት ወምድር፡፡<br>
+       <strong>Amharic:</strong> ምድርና ሰማያትን የፈጠረ ነው፡፡<br>
+       <strong>English:</strong> He is the One who created the earth and the heavens.</p>
+  </details>
+
+  <details>
+    <summary>ጠ — God is wise</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ጠቢብ እግዚአብሔር፡፡<br>
+       <strong>Amharic:</strong> እግዚአብሔር ጠቢብ ነው፡፡<br>
+       <strong>English:</strong> God is wise.</p>
+  </details>
+
+  <details>
+    <summary>ጰ — The Paraclete is the Spirit of truth</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ጰራቅሊጦስ መንፈሰ ጽድቅ፡፡<br>
+       <strong>Amharic:</strong> ጰራቅሊጦስ የእውነት መንፈስ ነው፡፡<br>
+       <strong>English:</strong> The Paraclete is the Spirit of truth.</p>
+  </details>
+
+  <details>
+    <summary>ጸ — God is grace and truth</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ጸጋ ወጽድቅ እግዚአብሔር፡፡<br>
+       <strong>Amharic:</strong> እግዚአብሔር ጸጋና እውነት ነው፡፡<br>
+       <strong>English:</strong> God is grace and truth.</p>
+  </details>
+
+  <details>
+    <summary>ፀ — God is the sun of truth</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ፀሐየ ጽድቅ እግዚአብሔር፡፡<br>
+       <strong>Amharic:</strong> እግዚአብሔር የእውነት ፀሐይ ነው፡፡<br>
+       <strong>English:</strong> God is the sun of truth.</p>
+  </details>
+
+  <details>
+    <summary>ፈ — He created the world with His wisdom</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ፈጠረ ዓለመ በጥበቡ፡፡<br>
+       <strong>Amharic:</strong> በጥበቡ ዓለምን ፈጠረ፡፡<br>
+       <strong>English:</strong> He created the world with His wisdom.</p>
+  </details>
+
+  <details>
+    <summary>ፐ — The name of God is Papael</summary>
+    <p><strong>Ge'ez:</strong> ብሂል ፓፓኤል ስሙ ለእግዚአብሔር፡፡<br>
+       <strong>Amharic:</strong> የእግዚአብሔር ስሙ ፓፓኤል ነው፡፡<br>
+       <strong>English:</strong> The name of God is Papael.</p>
+  </details>
+  </section>
+    
 </body>
-</html>
+  </html>
+                                                                                              </section>
