@@ -1,182 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ge‘ez Syllabary Interactive</title>
+  <meta charset="UTF-8" />
+  <title>Ge‘ez Syllabary</title>
   <style>
     body {
-      font-family: "Noto Sans Ethiopic", "Abyssinica SIL", sans-serif;
-      background-color: #f4f8fb;
-      color: #111;
-      padding: 20px;
-      transition: background-color 0.3s, color 0.3s;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f9f9f9, #eef2f3);
     }
-    h1 {
+    header {
+      background: #3f51b5;
+      color: white;
+      padding: 1rem;
       text-align: center;
-      color: #004080;
+      font-size: 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    main {
+      padding: 2rem;
     }
     table {
-      width: 95%;
-      margin: 20px auto;
+      width: 100%;
       border-collapse: collapse;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
     }
     th, td {
-      border: 1px solid #bbb;
-      padding: 10px;
+      border: 1px solid #ccc;
+      padding: 12px;
       text-align: center;
-      font-size: 24px;
-      transition: background-color 0.3s ease;
-      cursor: pointer;
+      font-size: 18px;
     }
     th {
-      background-color: #004080;
-      color: white;
+      background-color: #e0e0e0;
     }
-    tr:hover {
-      background-color: #e0f0ff;
+    .syllable {
+      display: block;
+      font-size: 28px;
+      font-weight: bold;
+      color: #333;
     }
-    .popup {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: #004080;
-      color: #fff;
-      padding: 12px 18px;
-      border-radius: 8px;
-      font-size: 18px;
+    .latin {
+      display: block;
+      font-size: 14px;
+      color: #666;
+    }
+    audio {
       display: none;
-      z-index: 1000;
     }
-    .toggle-btn {
-      margin: 20px auto;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-    }
-    button {
-      padding: 10px 16px;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      background-color: #004080;
+    .play-btn {
+      margin-top: 5px;
+      padding: 4px 8px;
+      background-color: #3f51b5;
       color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 12px;
       cursor: pointer;
     }
-    button:hover {
-      background-color: #0059b3;
-    }
-    .dark {
-      background-color: #121212;
-      color: #e0e0e0;
-    }
-    .dark th {
-      background-color: #222;
-      color: #fff;
-    }
-    .dark tr:hover {
-      background-color: #333;
+    .play-btn:hover {
+      background-color: #303f9f;
     }
   </style>
 </head>
 <body>
+  <header>Ge‘ez Syllabary</header>
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>Base</th>
+          <th>1st (ə)</th>
+          <th>2nd (u)</th>
+          <th>3rd (i)</th>
+          <th>4th (a)</th>
+          <th>5th (e)</th>
+          <th>6th (ə)</th>
+          <th>7th (o)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ሀ</td>
+          <td><span class="syllable">ሀ</span><span class="latin">ha</span><button class="play-btn" onclick="playAudio('ha')">▶</button></td>
+          <td><span class="syllable">ሁ</span><span class="latin">hu</span><button class="play-btn" onclick="playAudio('hu')">▶</button></td>
+          <td><span class="syllable">ሂ</span><span class="latin">hi</span><button class="play-btn" onclick="playAudio('hi')">▶</button></td>
+          <td><span class="syllable">ሃ</span><span class="latin">ha</span><button class="play-btn" onclick="playAudio('haa')">▶</button></td>
+          <td><span class="syllable">ሄ</span><span class="latin">he</span><button class="play-btn" onclick="playAudio('he')">▶</button></td>
+          <td><span class="syllable">ህ</span><span class="latin">hə</span><button class="play-btn" onclick="playAudio('hə')">▶</button></td>
+          <td><span class="syllable">ሆ</span><span class="latin">ho</span><button class="play-btn" onclick="playAudio('ho')">▶</button></td>
+        </tr>
+        <tr>
+          <td>ለ</td>
+          <td><span class="syllable">ለ</span><span class="latin">le</span><button class="play-btn" onclick="playAudio('le')">▶</button></td>
+          <td><span class="syllable">ሉ</span><span class="latin">lu</span><button class="play-btn" onclick="playAudio('lu')">▶</button></td>
+          <td><span class="syllable">ሊ</span><span class="latin">li</span><button class="play-btn" onclick="playAudio('li')">▶</button></td>
+          <td><span class="syllable">ላ</span><span class="latin">la</span><button class="play-btn" onclick="playAudio('la')">▶</button></td>
+          <td><span class="syllable">ሌ</span><span class="latin">le</span><button class="play-btn" onclick="playAudio('lee')">▶</button></td>
+          <td><span class="syllable">ል</span><span class="latin">lə</span><button class="play-btn" onclick="playAudio('lə')">▶</button></td>
+          <td><span class="syllable">ሎ</span><span class="latin">lo</span><button class="play-btn" onclick="playAudio('lo')">▶</button></td>
+        </tr>
+      </tbody>
+    </table>
 
-<h1>Ge‘ez / ግዕዝ Syllabary Chart</h1>
+    <!-- Audio elements -->
+    <audio id="ha" src="audio/ha.mp3"></audio>
+    <audio id="hu" src="audio/hu.mp3"></audio>
+    <audio id="hi" src="audio/hi.mp3"></audio>
+    <audio id="haa" src="audio/haa.mp3"></audio>
+    <audio id="he" src="audio/he.mp3"></audio>
+    <audio id="hə" src="audio/hə.mp3"></audio>
+    <audio id="ho" src="audio/ho.mp3"></audio>
 
-<div class="toggle-btn">
-  <button onclick="toggleDarkMode()">🌓 Toggle Dark Mode</button>
-  <button onclick="startQuiz()">🧠 Quiz Me!</button>
-</div>
+    <audio id="le" src="audio/le.mp3"></audio>
+    <audio id="lu" src="audio/lu.mp3"></audio>
+    <audio id="li" src="audio/li.mp3"></audio>
+    <audio id="la" src="audio/la.mp3"></audio>
+    <audio id="lee" src="audio/lee.mp3"></audio>
+    <audio id="lə" src="audio/lə.mp3"></audio>
+    <audio id="lo" src="audio/lo.mp3"></audio>
+  </main>
 
-<table id="geezTable">
-  <thead>
-    <tr>
-      <th></th>
-      <th title="ä as in 'father'">ä</th>
-      <th title="u as in 'boot'">u</th>
-      <th title="ē as in 'they'">ē</th> <!-- Swapped -->
-      <th title="a as in 'cat'">a</th>
-      <th title="i as in 'machine'">i</th> <!-- Swapped -->
-      <th title="ə as in 'sofa'">ə</th>
-      <th title="o as in 'go'">o</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><th>h</th><td>ሀ</td><td>ሁ</td><td>ሄ</td><td>ሃ</td><td>ሂ</td><td>ህ</td><td>ሆ</td></tr>
-    <tr><th>l</th><td>ለ</td><td>ሉ</td><td>ሌ</td><td>ላ</td><td>ሊ</td><td>ል</td><td>ሎ</td></tr>
-    <tr><th>ḥ</th><td>ሐ</td><td>ሑ</td><td>ሔ</td><td>ሓ</td><td>ሒ</td><td>ሕ</td><td>ሖ</td></tr>
-    <tr><th>m</th><td>መ</td><td>ሙ</td><td>ሜ</td><td>ማ</td><td>ሚ</td><td>ም</td><td>ሞ</td></tr>
-    <tr><th>s</th><td>ሰ</td><td>ሱ</td><td>ሴ</td><td>ሳ</td><td>ሲ</td><td>ስ</td><td>ሶ</td></tr>
-    <tr><th>r</th><td>ረ</td><td>ሩ</td><td>ሬ</td><td>ራ</td><td>ሪ</td><td>ር</td><td>ሮ</td></tr>
-    <tr><th>q</th><td>ቀ</td><td>ቁ</td><td>ቄ</td><td>ቃ</td><td>ቂ</td><td>ቅ</td><td>ቆ</td></tr>
-    <tr><th>b</th><td>በ</td><td>ቡ</td><td>ቤ</td><td>ባ</td><td>ቢ</td><td>ብ</td><td>ቦ</td></tr>
-    <tr><th>t</th><td>ተ</td><td>ቱ</td><td>ቴ</td><td>ታ</td><td>ቲ</td><td>ት</td><td>ቶ</td></tr>
-    <tr><th>č</th><td>ቸ</td><td>ቹ</td><td>ቼ</td><td>ቻ</td><td>ቺ</td><td>ች</td><td>ቾ</td></tr>
-    <tr><th>n</th><td>ነ</td><td>ኑ</td><td>ኔ</td><td>ና</td><td>ኒ</td><td>ን</td><td>ኖ</td></tr>
-    <tr><th>k</th><td>ከ</td><td>ኩ</td><td>ኬ</td><td>ካ</td><td>ኪ</td><td>ክ</td><td>ኮ</td></tr>
-    <tr><th>w</th><td>ወ</td><td>ዉ</td><td>ዌ</td><td>ዋ</td><td>ዊ</td><td>ው</td><td>ዎ</td></tr>
-    <tr><th>ʾ</th><td>ዐ</td><td>ዑ</td><td>ዔ</td><td>ዓ</td><td>ዒ</td><td>ዕ</td><td>ዖ</td></tr>
-    <tr><th>y</th><td>የ</td><td>ዩ</td><td>ዬ</td><td>ያ</td><td>ዪ</td><td>ይ</td><td>ዮ</td></tr>
-  </tbody>
-</table>
-
-<div class="popup" id="popup"></div>
-
-<script>
-  const ipaHeaders = ["ä", "u", "ē", "a", "i", "ə", "o"]; // swapped ē and i
-  const table = document.getElementById("geezTable");
-  const popup = document.getElementById("popup");
-  const body = document.body;
-
-  table.addEventListener("click", function (event) {
-    const cell = event.target;
-    const row = cell.parentElement;
-    const cellIndex = cell.cellIndex;
-
-    if (cell.tagName === "TD" && cellIndex > 0) {
-      const ipa = ipaHeaders[cellIndex - 1];
-      const char = cell.innerText;
-
-      popup.innerText = `IPA: [${ipa}] — '${char}'`;
-      popup.style.display = "block";
-
-      const utter = new SpeechSynthesisUtterance(char);
-      utter.lang = "am-ET";
-
-      // Swap voice output for columns 3 and 5
-      if (cellIndex === 3) {
-        utter.text = row.cells[5].innerText;
-      } else if (cellIndex === 5) {
-        utter.text = row.cells[3].innerText;
+  <script>
+    function playAudio(id) {
+      const audio = document.getElementById(id);
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play();
       }
-
-      speechSynthesis.speak(utter);
-
-      setTimeout(() => {
-        popup.style.display = "none";
-      }, 3000);
     }
-  });
-
-  function toggleDarkMode() {
-    body.classList.toggle("dark");
-  }
-
-  function startQuiz() {
-    const allRows = Array.from(table.getElementsByTagName("tr")).slice(1);
-    const randomRow = allRows[Math.floor(Math.random() * allRows.length)];
-    const cells = Array.from(randomRow.getElementsByTagName("td"));
-    const randIndex = Math.floor(Math.random() * cells.length);
-    const char = cells[randIndex].innerText;
-    const answer = ipaHeaders[randIndex];
-
-    const userGuess = prompt(`What is the IPA vowel for '${char}'? (ex: ä, u, i, a, ē, ə, o)`);
-    if (userGuess && userGuess.trim().toLowerCase() === answer) {
-      alert("✅ Correct!");
-    } else {
-      alert(`❌ Incorrect. The correct answer is [${answer}]`);
-    }
-  }
-</script>
-
+  </script>
 </body>
 </html>
