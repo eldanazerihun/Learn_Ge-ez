@@ -2,137 +2,102 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Ge‘ez Syllabary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fidel Table</title>
   <style>
     body {
+      background: #f9f9f9;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #f9f9f9, #eef2f3);
+      display: flex;
+      justify-content: center;
+      padding: 40px;
     }
-    header {
-      background: #3f51b5;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-      font-size: 2rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-    main {
-      padding: 2rem;
-    }
+
     table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      border-radius: 10px;
+      border-collapse: separate;
+      border-spacing: 0;
+      border: 1px solid #ddd;
+      border-radius: 12px;
       overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      background: white;
+      font-size: 20px;
+      min-width: 80%;
     }
+
     th, td {
-      border: 1px solid #ccc;
-      padding: 12px;
+      padding: 14px 20px;
       text-align: center;
-      font-size: 18px;
     }
+
     th {
-      background-color: #e0e0e0;
-    }
-    .syllable {
-      display: block;
-      font-size: 28px;
-      font-weight: bold;
-      color: #333;
-    }
-    .latin {
-      display: block;
-      font-size: 14px;
-      color: #666;
-    }
-    audio {
-      display: none;
-    }
-    .play-btn {
-      margin-top: 5px;
-      padding: 4px 8px;
-      background-color: #3f51b5;
+      background-color: #4e73df;
       color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: 12px;
-      cursor: pointer;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
-    .play-btn:hover {
-      background-color: #303f9f;
+
+    tr:nth-child(even) {
+      background-color: #f4f6f9;
+    }
+
+    tr:hover {
+      background-color: #dce3fa;
+      transition: background-color 0.3s;
+    }
+
+    td:first-child {
+      font-weight: bold;
+      color: #4e73df;
+      background-color: #f0f3fa;
+    }
+
+    @media screen and (max-width: 768px) {
+      table {
+        font-size: 16px;
+        min-width: 100%;
+      }
+
+      th, td {
+        padding: 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>Ge‘ez Syllabary</header>
-  <main>
-    <table>
-      <thead>
-        <tr>
-          <th>Base</th>
-          <th>1st (ə)</th>
-          <th>2nd (u)</th>
-          <th>3rd (i)</th>
-          <th>4th (a)</th>
-          <th>5th (e)</th>
-          <th>6th (ə)</th>
-          <th>7th (o)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>ሀ</td>
-          <td><span class="syllable">ሀ</span><span class="latin">ha</span><button class="play-btn" onclick="playAudio('ha')">▶</button></td>
-          <td><span class="syllable">ሁ</span><span class="latin">hu</span><button class="play-btn" onclick="playAudio('hu')">▶</button></td>
-          <td><span class="syllable">ሂ</span><span class="latin">hi</span><button class="play-btn" onclick="playAudio('hi')">▶</button></td>
-          <td><span class="syllable">ሃ</span><span class="latin">ha</span><button class="play-btn" onclick="playAudio('haa')">▶</button></td>
-          <td><span class="syllable">ሄ</span><span class="latin">he</span><button class="play-btn" onclick="playAudio('he')">▶</button></td>
-          <td><span class="syllable">ህ</span><span class="latin">hə</span><button class="play-btn" onclick="playAudio('hə')">▶</button></td>
-          <td><span class="syllable">ሆ</span><span class="latin">ho</span><button class="play-btn" onclick="playAudio('ho')">▶</button></td>
-        </tr>
-        <tr>
-          <td>ለ</td>
-          <td><span class="syllable">ለ</span><span class="latin">le</span><button class="play-btn" onclick="playAudio('le')">▶</button></td>
-          <td><span class="syllable">ሉ</span><span class="latin">lu</span><button class="play-btn" onclick="playAudio('lu')">▶</button></td>
-          <td><span class="syllable">ሊ</span><span class="latin">li</span><button class="play-btn" onclick="playAudio('li')">▶</button></td>
-          <td><span class="syllable">ላ</span><span class="latin">la</span><button class="play-btn" onclick="playAudio('la')">▶</button></td>
-          <td><span class="syllable">ሌ</span><span class="latin">le</span><button class="play-btn" onclick="playAudio('lee')">▶</button></td>
-          <td><span class="syllable">ል</span><span class="latin">lə</span><button class="play-btn" onclick="playAudio('lə')">▶</button></td>
-          <td><span class="syllable">ሎ</span><span class="latin">lo</span><button class="play-btn" onclick="playAudio('lo')">▶</button></td>
-        </tr>
-      </tbody>
-    </table>
 
-    <!-- Audio elements -->
-    <audio id="ha" src="audio/ha.mp3"></audio>
-    <audio id="hu" src="audio/hu.mp3"></audio>
-    <audio id="hi" src="audio/hi.mp3"></audio>
-    <audio id="haa" src="audio/haa.mp3"></audio>
-    <audio id="he" src="audio/he.mp3"></audio>
-    <audio id="hə" src="audio/hə.mp3"></audio>
-    <audio id="ho" src="audio/ho.mp3"></audio>
+<table>
+  <tr>
+    <th></th><th>ä</th><th>u</th><th>i</th><th>a</th><th>e</th><th>ə</th><th>o</th>
+  </tr>
+  <tr><td>h</td><td>ሀ</td><td>ሁ</td><td>ሂ</td><td>ሃ</td><td>ሄ</td><td>ህ</td><td>ሆ</td></tr>
+  <tr><td>l</td><td>ለ</td><td>ሉ</td><td>ሊ</td><td>ላ</td><td>ሌ</td><td>ል</td><td>ሎ</td></tr>
+  <tr><td>ḥ</td><td>ሐ</td><td>ሑ</td><td>ሒ</td><td>ሓ</td><td>ሔ</td><td>ሕ</td><td>ሖ</td></tr>
+  <tr><td>m</td><td>መ</td><td>ሙ</td><td>ሚ</td><td>ማ</td><td>ሜ</td><td>ም</td><td>ሞ</td></tr>
+  <tr><td>ś</td><td>ሠ</td><td>ሡ</td><td>ሢ</td><td>ሣ</td><td>ሤ</td><td>ሥ</td><td>ሦ</td></tr>
+  <tr><td>r</td><td>ረ</td><td>ሩ</td><td>ሪ</td><td>ራ</td><td>ሬ</td><td>ር</td><td>ሮ</td></tr>
+  <tr><td>s</td><td>ሰ</td><td>ሱ</td><td>ሲ</td><td>ሳ</td><td>ሴ</td><td>ስ</td><td>ሶ</td></tr>
+  <tr><td>q</td><td>ቀ</td><td>ቁ</td><td>ቂ</td><td>ቃ</td><td>ቄ</td><td>ቅ</td><td>ቆ</td></tr>
+  <tr><td>b</td><td>በ</td><td>ቡ</td><td>ቢ</td><td>ባ</td><td>ቤ</td><td>ብ</td><td>ቦ</td></tr>
+  <tr><td>t</td><td>ተ</td><td>ቱ</td><td>ቲ</td><td>ታ</td><td>ቴ</td><td>ት</td><td>ቶ</td></tr>
+  <tr><td>ḥ</td><td>ኀ</td><td>ኁ</td><td>ኂ</td><td>ኃ</td><td>ኄ</td><td>ኅ</td><td>ኆ</td></tr>
+  <tr><td>n</td><td>ነ</td><td>ኑ</td><td>ኒ</td><td>ና</td><td>ኔ</td><td>ን</td><td>ኖ</td></tr>
+  <tr><td>ʔ</td><td>አ</td><td>ኡ</td><td>ኢ</td><td>ኣ</td><td>ኤ</td><td>እ</td><td>ኦ</td></tr>
+  <tr><td>k</td><td>ከ</td><td>ኩ</td><td>ኪ</td><td>ካ</td><td>ኬ</td><td>ክ</td><td>ኮ</td></tr>
+  <tr><td>w</td><td>ወ</td><td>ዉ</td><td>ዊ</td><td>ዋ</td><td>ዌ</td><td>ው</td><td>ዎ</td></tr>
+  <tr><td>ʔ</td><td>ዐ</td><td>ዑ</td><td>ዒ</td><td>ዓ</td><td>ዔ</td><td>ዕ</td><td>ዖ</td></tr>
+  <tr><td>z</td><td>ዘ</td><td>ዙ</td><td>ዚ</td><td>ዛ</td><td>ዜ</td><td>ዝ</td><td>ዞ</td></tr>
+  <tr><td>y</td><td>የ</td><td>ዩ</td><td>ዪ</td><td>ያ</td><td>ዬ</td><td>ይ</td><td>ዮ</td></tr>
+  <tr><td>d</td><td>ደ</td><td>ዱ</td><td>ዲ</td><td>ዳ</td><td>ዴ</td><td>ድ</td><td>ዶ</td></tr>
+  <tr><td>g</td><td>ገ</td><td>ጉ</td><td>ጊ</td><td>ጋ</td><td>ጌ</td><td>ግ</td><td>ጎ</td></tr>
+  <tr><td>ṭ</td><td>ጠ</td><td>ጡ</td><td>ጢ</td><td>ጣ</td><td>ጤ</td><td>ጥ</td><td>ጦ</td></tr>
+  <tr><td>p</td><td>ጰ</td><td>ጱ</td><td>ጲ</td><td>ጳ</td><td>ጴ</td><td>ጵ</td><td>ጶ</td></tr>
+  <tr><td>ṣ</td><td>ጸ</td><td>ጹ</td><td>ጺ</td><td>ጻ</td><td>ጼ</td><td>ጽ</td><td>ጾ</td></tr>
+  <tr><td>ṣ́</td><td>ፀ</td><td>ፁ</td><td>ፂ</td><td>ፃ</td><td>ፄ</td><td>ፅ</td><td>ፆ</td></tr>
+  <tr><td>f</td><td>ፈ</td><td>ፉ</td><td>ፊ</td><td>ፋ</td><td>ፌ</td><td>ፍ</td><td>ፎ</td></tr>
+  <tr><td>p</td><td>ፐ</td><td>ፑ</td><td>ፒ</td><td>ፓ</td><td>ፔ</td><td>ፕ</td><td>ፖ</td></tr>
+</table>
 
-    <audio id="le" src="audio/le.mp3"></audio>
-    <audio id="lu" src="audio/lu.mp3"></audio>
-    <audio id="li" src="audio/li.mp3"></audio>
-    <audio id="la" src="audio/la.mp3"></audio>
-    <audio id="lee" src="audio/lee.mp3"></audio>
-    <audio id="lə" src="audio/lə.mp3"></audio>
-    <audio id="lo" src="audio/lo.mp3"></audio>
-  </main>
-
-  <script>
-    function playAudio(id) {
-      const audio = document.getElementById(id);
-      if (audio) {
-        audio.currentTime = 0;
-        audio.play();
-      }
-    }
-  </script>
 </body>
 </html>
