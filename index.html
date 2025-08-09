@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -12,31 +12,28 @@
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      background-color: #FFF8E1; /* parchment */
+      background-color: #FFF8E1;
       color: #2F2F2F;
     }
-
     header {
-      background-color: #ffffff;
+      background-color: #fef6e4;
       padding: 1rem 2rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      border-bottom: 2px solid #e0c48d;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
-
-    nav a, nav button {
-      margin: 0 0.5rem;
+    nav a {
+      margin: 0 0.75rem;
       text-decoration: none;
-      color: #8C3B16;
+      color: #5c3317;
+      font-weight: 600;
       transition: color 0.3s;
     }
-
-    nav a:hover, nav button:hover {
-      color: #DAA520;
+    nav a:hover {
+      color: #a65c00;
     }
-
     .gradient-bg {
       position: relative;
       background: linear-gradient(to right, #8C3B16, #DAA520);
@@ -46,7 +43,6 @@
       border-radius: 0 0 1.5rem 1.5rem;
       overflow: hidden;
     }
-
     .gradient-bg::after {
       content: "";
       background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/19/Ge%27ez_script_sample.jpg');
@@ -58,17 +54,8 @@
       top: 0; left: 0; right: 0; bottom: 0;
       z-index: 0;
     }
-
-    .gradient-bg * {
-      position: relative;
-      z-index: 1;
-    }
-
-    h1 {
-      font-family: 'EB Garamond', serif;
-      font-size: 3rem;
-    }
-
+    .gradient-bg * { position: relative; z-index: 1; }
+    h1 { font-family: 'EB Garamond', serif; font-size: 3rem; }
     .btn {
       background-color: #8C3B16;
       color: white;
@@ -80,90 +67,55 @@
       transition: background-color 0.3s;
       text-decoration: none;
     }
-
-    .btn:hover {
-      background-color: #A04000;
+    .btn:hover { background-color: #A04000; }
+    .why-geez {
+      padding: 4rem 2rem;
+      background-color: #fff3cd;
+      color: #4a2c18;
+      text-align: center;
     }
-
+    .why-geez h2 { font-size: 2.5rem; margin-bottom: 2rem; }
+    .why-geez p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      font-family: 'EB Garamond', serif;
+    }
     section#courses {
       padding: 4rem 2rem;
       background-color: #fefae0;
     }
-
     .course-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
     }
-
     .card {
       background-color: white;
       padding: 1.5rem;
       border-radius: 1rem;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      width: 80%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       transition: transform 0.3s;
     }
-
-    .card:hover {
-      transform: scale(1.03);
+    .card:hover { transform: scale(1.03); }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
     }
-
-    h2, h3 {
-      font-family: 'EB Garamond', serif;
-      margin-top: 0;
-    }
-
-    p {
-      line-height: 1.6;
-    }
-
-    /* Why Learn Ge'ez section */
-    .why-geez {
-      padding: 4rem 2rem;
-      background-color: #fff3cd;
-      color: #4a2c18;
-    }
-
-    .why-geez h2 {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .why-geez p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      text-align: center;
-      font-family: 'EB Garamond', serif;
-    }
-    header {
-  background-color: #fef6e4; /* soft parchment tone */
-  padding: 1rem 2rem;
-  border-bottom: 2px solid #e0c48d;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-nav a {
-  margin: 0 0.75rem;
-  text-decoration: none;
-  color: #5c3317; /* deep brown */
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #a65c00; /* warm copper on hover */
-}
+    h2, h3 { font-family: 'EB Garamond', serif; margin-top: 0; }
+    p { line-height: 1.6; }
   </style>
 </head>
-
 <body>
-
-  <!-- Header -->
   <header>
     <div class="logo text-xl font-bold" style="color: #8C3B16;">Learn Ge'ez</div>
     <nav>
@@ -172,83 +124,76 @@ nav a:hover {
       <a href="#why">Why Ge'ez?</a>
       <a href="contact.html">Contact</a>
       <a href="about.html">about</a>
-    <!---  <button class="btn">Sign In</button>--->
     </nav>
   </header>
 
-  <!-- Hero -->
   <section id="home" class="gradient-bg">
     <h1>Where ancient words find new voice</h1>
-    <!---<p style="font-style: italic; font-size: 1.2rem; margin-top: 1rem;"> amhaivፈዘደዐጀተ</p>--->
     <p>Welcome to Learn Ge'ez!</p>
     <p>This site is created for anyone still seeking, still curious about the roots of Ethiopia. you may be an Ethiopian or not, but if you're interested in the Ge’ez language — you're in the right place.</p>
-    <p> You can find out about the history of the language, train with beginner-level lessons, simple explanations, and resources to help you explore a language that history tried to bury, but couldn't erase.</p>
-    <p> These old stories and this old language hold something worth listening to. Through forgotten texts, through ancient symbols, wisdom echoes. </p>
+    <p>You can find out about the history of the language, train with beginner-level lessons, simple explanations, and resources to help you explore a language that history tried to bury, but couldn't erase.</p>
+    <p>These old stories and this old language hold something worth listening to. Through forgotten texts, through ancient symbols, wisdom echoes.</p>
     <p>You don’t need to know much to begin. All you need is curiosity and persistence.</p>
     <p>Let’s explore Ge’ez together.</p>
     <a href="#courses" class="btn">Explore Courses</a>
   </section>
 
-  <!-- Why Learn Ge'ez -->
   <section id="why" class="why-geez">
     <h2>Why Learn Ge’ez?</h2>
-    <p>
-      Ge’ez is Ethiopia’s ancient tongue. But it’s also her archive — the one language in which her golden history was encoded.
-To learn Ge’ez is to walk through the roots of a civilization that wrote it on stone and parchment.
-In every character, there's a legacy. In every word, a voice from the past.
-Let’s awaken Ge’ez!
-    </p>
+    <p>Ge’ez is Ethiopia’s ancient tongue. But it’s also her archive — the one language in which her golden history was encoded. To learn Ge’ez is to walk through the roots of a civilization that wrote it on stone and parchment. In every character, there's a legacy. In every word, a voice from the past. Let’s awaken Ge’ez!</p>
   </section>
 
- <!-- Courses -->
-<section id="courses">
-  <h2 class="text-3xl font-bold text-center mb-12">Our Courses</h2>
-  
-  <div class="course-grid">
+  <section id="courses">
+    <h2 class="text-3xl font-bold text-center mb-12">Our Courses</h2>
+    <div class="course-grid">
+      <div class="card">
+        <img src="Ethiopian_-_Leaf_from_Gunda_Gunde_Gospels_-_Walters_W8505R_-_Open_Obverse.jpg" alt="History of Ge'ez">
+        <h3 style="color:#8C3B16;">History of Ge'ez</h3>
+        <p>Understand the history and nature of the language.</p>
+        <a href="Course 1.html">Learn More →</a>
+      </div>
+      <div class="card">
+        <img src="" alt="Ge'ez Alphabet">
+        <h3 style="color:#8C3B16;">Ge'ez Alphabet & Pronunciation</h3>
+        <p>If you're not familiar with the alphabet, start here. This course covers the base forms and their sounds.</p>
+        <a href="Alphabet.html">Learn More →</a>
+      </div>
+      <div class="card">
     
-    <!-- Course 1: History -->
-    <div class="card">
-      <h3 class="text-2xl" style="color:#8C3B16;">History of Ge'ez</h3>
-      <p>Understand the history and nature of the language.</p>
-      <a href="Course 1.html">Learn More →</a>
-    </div>
-
-    <!-- Course 2: Alphabet -->
-    <div class="card">
-      <h3 class="text-2xl" style="color:#8C3B16;">Ge'ez Alphabet & Pronunciation</h3>
-      <p>If you're not familiar with the alphabet, start here. This course covers the base forms and their sounds.</p>
-      <a href="Alphabet.html ">Learn More →</a>
-    </div>
-
-    <!-- Course 3: Vocabulary -->
-    <div class="card">
-      <h3 class="text-2xl" style="color:#8C3B16;">Pronouns, Verbs & Nouns</h3>
-      <p>Start building real words by learning core vocabulary and simple structures.</p>
-      <a href="Course 3.html">Learn More →</a>
-    </div>
-
-    <!-- Course 4: Grammar -->
-   <!--- <div class="card">
-      <h3 class="text-2xl" style="color:#8C3B16;">Basic Grammar & Sentence Structure</h3>
-      <p>Understand how sentences work: gender, number, and tense all in simple breakdowns.</p>
-      <a href="#">Learn More →</a>
-    </div> --->
-
-    <!-- Course 5: Proverbs -->
-    <div class="card">
-      <h3 class="text-2xl" style="color:#8C3B16;"> Numbers in Ge'ez</h3>
-      <p> Learn how the Ge’ez numbering system works</p>
-      <a href="Numbers.html">Learn More →</a>
-    </div>
-
-  </div>
-</section>
+        <h3 style="color:#8C3B16;">Pronouns, Verbs & Nouns</h3>
+        <p>Start building real words by learning core vocabulary and simple structures.</p>
+        <a href="Course 3.html">Learn More →</a>
+      </div>
+      <div class="card">
         
-        
+        <h3 style="color:#8C3B16;">Numbers in Ge'ez</h3>
+        <p>Learn how the Ge’ez numbering system works</p>
+        <a href="Numbers.html">Learn More →</a>
       </div>
     </div>
   </section>
 
+  <script>
+    // Placeholder script for image slideshow effect
+    const images = {
+      'history-placeholder.jpg': ['history1.jpg','history2.jpg'],
+      'alphabet-placeholder.jpg': ['alphabet1.jpg','alphabet2.jpg'],
+      'vocabulary-placeholder.jpg': ['vocab1.jpg','vocab2.jpg'],
+      'numbers-placeholder.jpg': ['numbers1.jpg','numbers2.jpg']
+    };
+    document.querySelectorAll('.card img').forEach(img => {
+      let i = 0;
+      const srcList = images[img.getAttribute('src')];
+      if(srcList){
+        setInterval(() => {
+          i = (i + 1) % srcList.length;
+          img.src = srcList[i];
+        }, 3000);
+      }
+    });
+  </script>
 </body>
 </html>
+
+
 
