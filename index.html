@@ -115,6 +115,31 @@
     h2, h3 { font-family: 'EB Garamond', serif; margin-top: 0; }
     p { line-height: 1.6; }
   </style>
+
+
+  <style> <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const homeBgImages = [
+      ".jpg",
+      "image2.jpg",
+      "image3.jpg",
+      "image4.jpg"
+    ];
+
+    let homeBgIndex = 0;
+    const homeSection = document.querySelector('.gradient-bg');
+
+    function changeHomeBackground() {
+      homeSection.style.backgroundImage =
+        `linear-gradient(to right, rgba(140, 59, 22, 0.8), rgba(218, 165, 32, 0.8)), url(${homeBgImages[homeBgIndex]})`;
+      homeBgIndex = (homeBgIndex + 1) % homeBgImages.length;
+    }
+
+    changeHomeBackground();
+    setInterval(changeHomeBackground, 5000);
+  });
+</script> </style>
+  
 </head>
 <body>
   <header>
