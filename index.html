@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta name="google-site-verification" content="RuELbp1tsGcOmz98Q4AD2BoHjHD-A5YXkjIhe3qYEFY" />
@@ -116,57 +116,68 @@
     p { line-height: 1.6; }
 
     .slideshow-container {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  margin: 2rem auto;
-  overflow: hidden;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.slideshow-container img {
-  width: 100%;
-  display: none;
-  object-fit: cover;
-  border-radius: 1rem;
-}
-
-.slideshow-container img.active {
-  display: block;
-  animation: fade 1.5s ease-in-out;
-}
-
-@keyframes fade {
-  from { opacity: 0.4; }
-  to { opacity: 1; }
-}
-  </style>
-
-
-  <style> <script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const homeBgImages = [
-      "Scroll_containing_magical_prayers_to_protect_against_evil_(CBL_W_941).jpg",
-      "Texte_biblique_en_guèze_ou_ge'_ez_-_btv1b102246940_(06_of_94).jpg",
-      "image3.jpg",
-      "image4.jpg"
-    ];
-
-    let homeBgIndex = 0;
-    const homeSection = document.querySelector('.gradient-bg');
-
-    function changeHomeBackground() {
-      homeSection.style.backgroundImage =
-        `linear-gradient(to right, rgba(140, 59, 22, 0.8), rgba(218, 165, 32, 0.8)), url('${homeBgImages[homeBgIndex]}')`;
-      homeBgIndex = (homeBgIndex + 1) % homeBgImages.length;
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 2rem auto;
+      overflow: hidden;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    changeHomeBackground();
-    setInterval(changeHomeBackground, 5000);
-  });
-</script> </style>
-  
+    .slideshow-container img {
+      width: 100%;
+      display: none;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+
+    .slideshow-container img.active {
+      display: block;
+      animation: fade 1.5s ease-in-out;
+    }
+
+    @keyframes fade {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+  </style>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const homeBgImages = [
+        "Scroll_containing_magical_prayers_to_protect_against_evil_(CBL_W_941).jpg",
+        "Texte_biblique_en_guèze_ou_ge'_ez_-_btv1b102246940_(06_of_94).jpg",
+        "image3.jpg",
+        "image4.jpg"
+      ];
+
+      let homeBgIndex = 0;
+      const homeSection = document.querySelector('.gradient-bg');
+
+      function changeHomeBackground() {
+        homeSection.style.backgroundImage =
+          `linear-gradient(to right, rgba(140, 59, 22, 0.8), rgba(218, 165, 32, 0.8)), url('${homeBgImages[homeBgIndex]}')`;
+        homeBgIndex = (homeBgIndex + 1) % homeBgImages.length;
+      }
+
+      changeHomeBackground();
+      setInterval(changeHomeBackground, 5000);
+
+      const slides = document.querySelectorAll(".slideshow-container .slide");
+      let currentIndex = 0;
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === index);
+        });
+      }
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      }
+      setInterval(nextSlide, 4000);
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -190,13 +201,13 @@
     <p>Let’s explore Ge’ez together.</p>
     <a href="#courses" class="btn">Explore Courses</a>
   </section>
-<!-- Slideshow Section -->
-<section id="slideshow" class="slideshow-container">
-  <img src="Texte_biblique_en_guèze_ou_ge'_ez_-_btv1b102246940_(06_of_94).jpg" alt="Ge'ez Script" class="slide active">
-  <img src="Scroll_containing_magical_prayers_to_protect_against_evil_(CBL_W_941).jpg" alt="Ethiopian Manuscript" class="slide">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Lalibela_church.jpg" alt="Lalibela Church" class="slide">
-</section>
 
+  <!-- Slideshow Section -->
+  <section id="slideshow" class="slideshow-container">
+    <img src="Texte_biblique_en_guèze_ou_ge'_ez_-_btv1b102246940_(06_of_94).jpg" alt="Ge'ez Script" class="slide active">
+    <img src="Scroll_containing_magical_prayers_to_protect_against_evil_(CBL_W_941).jpg" alt="Ethiopian Manuscript" class="slide">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Lalibela_church.jpg" alt="Lalibela Church" class="slide">
+  </section>
 
   <section id="why" class="why-geez">
     <h2>Why Learn Ge’ez?</h2>
@@ -219,13 +230,11 @@
         <a href="Alphabet.html">Learn More →</a>
       </div>
       <div class="card">
-    
         <h3 style="color:#8C3B16;">Pronouns, Verbs & Nouns</h3>
         <p>Start building real words by learning core vocabulary and simple structures.</p>
         <a href="Course 3.html">Learn More →</a>
       </div>
       <div class="card">
-        
         <h3 style="color:#8C3B16;">Numbers in Ge'ez</h3>
         <p>Learn how the Ge’ez numbering system works</p>
         <a href="Numbers.html">Learn More →</a>
@@ -234,7 +243,6 @@
   </section>
 
   <script>
-    // Placeholder script for image slideshow effect
     const images = {
       'history-placeholder.jpg': ['history1.jpg','history2.jpg'],
       'alphabet-placeholder.jpg': ['alphabet1.jpg','alphabet2.jpg'],
@@ -253,7 +261,7 @@
     });
   </script>
 </body>
-</html>
+</html> 
 
 
 
