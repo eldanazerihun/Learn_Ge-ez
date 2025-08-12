@@ -37,22 +37,21 @@
     }
     .gradient-bg {
       position: relative;
-      background: linear-gradient(to right, #8C3B16, #DAA520);
+      background-size: cover;
+      background-position: center;
       color: white;
       text-align: center;
-      padding: 4rem 2rem;
+      padding: 6rem 2rem;
       border-radius: 0 0 1.5rem 1.5rem;
       overflow: hidden;
+      min-height: 500px;
+      transition: background-image 1s ease-in-out;
     }
-    .gradient-bg::after {
+    .gradient-bg::before {
       content: "";
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/19/Ge%27ez_script_sample.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      opacity: 0.08;
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
+      inset: 0;
+      background: linear-gradient(to right, rgba(140, 59, 22, 0.7), rgba(218, 165, 32, 0.7));
       z-index: 0;
     }
     .gradient-bg * { position: relative; z-index: 1; }
@@ -114,70 +113,7 @@
     }
     h2, h3 { font-family: 'EB Garamond', serif; margin-top: 0; }
     p { line-height: 1.6; }
-
-    .slideshow-container {
-      position: relative;
-      width: 100%;
-      max-width: 900px;
-      margin: 2rem auto;
-      overflow: hidden;
-      border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    .slideshow-container img {
-      width: 100%;
-      display: none;
-      object-fit: cover;
-      border-radius: 1rem;
-    }
-
-    .slideshow-container img.active {
-      display: block;
-      animation: fade 1.5s ease-in-out;
-    }
-
-    @keyframes fade {
-      from { opacity: 0.4; }
-      to { opacity: 1; }
-    }
   </style>
-
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const homeBgImages = [
-        "Scroll_containing_magical_prayers_to_protect_against_evil_(CBL_W_941).jpg",
-        "Texte_biblique_en_guèze_ou_ge'_ez_-_btv1b102246940_(06_of_94).jpg",
-        "image3.jpg",
-        "image4.jpg"
-      ];
-
-      let homeBgIndex = 0;
-      const homeSection = document.querySelector('.gradient-bg');
-
-      function changeHomeBackground() {
-        homeSection.style.backgroundImage =
-          `linear-gradient(to right, rgba(140, 59, 22, 0.8), rgba(218, 165, 32, 0.8)), url('${homeBgImages[homeBgIndex]}')`;
-        homeBgIndex = (homeBgIndex + 1) % homeBgImages.length;
-      }
-
-      changeHomeBackground();
-      setInterval(changeHomeBackground, 5000);
-
-      const slides = document.querySelectorAll(".slideshow-container .slide");
-      let currentIndex = 0;
-      function showSlide(index) {
-        slides.forEach((slide, i) => {
-          slide.classList.toggle("active", i === index);
-        });
-      }
-      function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
-      }
-      setInterval(nextSlide, 4000);
-    });
-  </script>
 </head>
 <body>
   <header>
@@ -200,13 +136,6 @@
     <p>You don’t need to know much to begin. All you need is curiosity and persistence.</p>
     <p>Let’s explore Ge’ez together.</p>
     <a href="#courses" class="btn">Explore Courses</a>
-  </section>
-
-  <!-- Slideshow Section -->
-  <section id="slideshow" class="slideshow-container">
-    <img src="Texte_biblique_en_guèze_ou_ge'_ez_-_btv1b102246940_(06_of_94).jpg" alt="Ge'ez Script" class="slide active">
-    <img src="Scroll_containing_magical_prayers_to_protect_against_evil_(CBL_W_941).jpg" alt="Ethiopian Manuscript" class="slide">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Lalibela_church.jpg" alt="Lalibela Church" class="slide">
   </section>
 
   <section id="why" class="why-geez">
@@ -243,25 +172,41 @@
   </section>
 
   <script>
-    const images = {
-      'history-placeholder.jpg': ['history1.jpg','history2.jpg'],
-      'alphabet-placeholder.jpg': ['alphabet1.jpg','alphabet2.jpg'],
-      'vocabulary-placeholder.jpg': ['vocab1.jpg','vocab2.jpg'],
-      'numbers-placeholder.jpg': ['numbers1.jpg','numbers2.jpg']
-    };
-    document.querySelectorAll('.card img').forEach(img => {
-      let i = 0;
-      const srcList = images[img.getAttribute('src')];
-      if(srcList){
-        setInterval(() => {
-          i = (i + 1) % srcList.length;
-          img.src = srcList[i];
-        }, 3000);
+    const bgImages = [
+      "Texte_biblique_en_guèze_ou_ge'_ez_-_btv1b102246940_(06_of_94).jpg",
+      "Scroll_containing_magical_prayers_to_protect_against_evil_(CBL_W_941).jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/8/8e/Lalibela_church.jpg"
+    ];
+    let bgIndex = 0;
+    const homeSection = document.querySelector(".gradient-bg");
+
+    function changeBackground(index) {
+      homeSection.style.backgroundImage = `url('${bgImages[index]}')`;
+    }
+
+    changeBackground(bgIndex);
+
+    // Auto-slide
+    setInterval(() => {
+      bgIndex = (bgIndex + 1) % bgImages.length;
+      changeBackground(bgIndex);
+    }, 4000);
+
+    // Swipe support
+    let startX = 0;
+    homeSection.addEventListener("touchstart", e => {
+      startX = e.touches[0].clientX;
+    });
+    homeSection.addEventListener("touchend", e => {
+      let endX = e.changedTouches[0].clientX;
+      if (endX < startX - 50) { // swipe left
+        bgIndex = (bgIndex + 1) % bgImages.length;
+        changeBackground(bgIndex);
+      } else if (endX > startX + 50) { // swipe right
+        bgIndex = (bgIndex - 1 + bgImages.length) % bgImages.length;
+        changeBackground(bgIndex);
       }
     });
   </script>
 </body>
-</html> 
-
-
-
+</html>
