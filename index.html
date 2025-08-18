@@ -378,7 +378,80 @@
   </section>
 
   <footer>
-    © <span id="year"></span> Learn Ge'ez — Ancient Language, New Voice
+    <!-- ===== LEFT-ALIGNED FOOTER ===== -->
+<footer class="left-footer">
+  <div class="footer-container">
+    <h4>Learn Ge'ez</h4>
+    <p>Explore the ancient language of Ethiopia. Beginner-friendly courses, resources, and history.</p>
+    <ul>
+      <li><a href="Course 1.html">History of Ge'ez</a></li>
+      <li><a href="Alphabet.html">Alphabet & Pronunciation</a></li>
+      <li><a href="Course 3.html">Pronouns, Verbs & Nouns</a></li>
+      <li><a href="Numbers.html">Numbers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+    <p style="margin-top: 1.5rem; max-width: 700px;">
+      This site aims to bring Ge’ez back to life, offering learners both history and practical knowledge. Continue your journey through ancient texts, cultural insights, and language exercises designed to awaken the legacy of Ethiopia’s golden language.
+    </p>
+  </div>
+
+  <div class="footer-bottom">
+    © <span id="year-footer"></span> Learn Ge'ez — Ancient Language, New Voice
+  </div>
+</footer>
+
+<style>
+  .left-footer {
+    background: #0a0a0a;
+    color: #dcd4e1;
+    padding: 3rem 2rem 2rem;
+    font-size: 0.95rem;
+  }
+  .footer-container {
+    max-width: 1000px;
+    margin: 0 auto 2rem auto;
+    text-align: left;
+  }
+  .footer-container h4 {
+    font-family: 'EB Garamond', serif;
+    margin-bottom: 1rem;
+    color: #d946ef; /* magenta accent */
+  }
+  .footer-container p {
+    margin: 0 0 1rem 0;
+    color: #c9c5cf;
+    line-height: 1.6;
+  }
+  .footer-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+  }
+  .footer-container ul li {
+    margin-bottom: 0.6rem;
+  }
+  .footer-container ul li a {
+    color: #c9c5cf;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-container ul li a:hover {
+    color: #d946ef;
+  }
+  .footer-bottom {
+    text-align: left;
+    border-top: 1px solid rgba(217,70,239,0.2);
+    padding-top: 1rem;
+    color: #aaa4bf;
+    font-size: 0.85rem;
+  }
+</style>
+
+<script>
+  document.getElementById('year-footer').textContent = new Date().getFullYear();
+</script>
   </footer>
 
   <script>
